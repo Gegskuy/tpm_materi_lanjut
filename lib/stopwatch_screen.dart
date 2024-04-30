@@ -83,7 +83,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF1C2757),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -94,9 +94,9 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                 child: Text(
                   "Stopwatch",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold
+                      color: Colors.white,
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.bold
                   ),
                 ),
               ),
@@ -106,15 +106,15 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 82.0,
-                        fontWeight: FontWeight.bold
+                          fontWeight: FontWeight.bold
                       )
                   )
               ),
               Container(
                 height: 400.0,
                 decoration: BoxDecoration(
-                  color: Color(0xff323f68),
-                  borderRadius: BorderRadius.circular(8.0)
+                    color: Color(0xff323f68),
+                    borderRadius: BorderRadius.circular(8.0)
                 ),
                 //list builder
                 child: ListView.builder(
@@ -155,7 +155,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
                           (!started) ? start() : stop();
                         },
                         shape: const StadiumBorder(
-                          side: BorderSide(color: Colors.white)
+                            side: BorderSide(color: Colors.white)
                         ),
                         child: Text(
                             (!started) ? "Start" : "Pause",
@@ -188,7 +188,7 @@ class _StopwatchScreenState extends State<StopwatchScreen> {
             ],
           ),
         ),
-      ),
+      )
     );
   }
 }

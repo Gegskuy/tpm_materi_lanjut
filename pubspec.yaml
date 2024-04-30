@@ -69,6 +69,7 @@ flutter:
      - assets/images/segitiga.png
      - assets/images/tim.png
      - assets/images/lists.jpg
+     - assets/images/bintang.jpg
 
   fonts:
     - family: Outfit

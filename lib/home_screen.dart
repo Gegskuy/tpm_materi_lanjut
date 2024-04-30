@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:mobilebgs/Information.dart';
 import 'package:mobilebgs/group_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mobilebgs/login_screen.dart';
@@ -9,6 +10,8 @@ import 'package:mobilebgs/recomendation.dart';
 import 'package:mobilebgs/stopwatch_screen.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:mobilebgs/triangle.dart';
+
+import 'favorite.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -25,20 +28,22 @@ class _HomeScreenState extends State<HomeScreen> {
     "assets/images/primaa.jpg",
     "assets/images/segitiga.png",
     "assets/images/lists.jpg",
+    "assets/images/bintang.jpg",
   ];
 
   List dataTitle = [
     "Group Data",
     "Primary Checker",
     "Triangle Calculator",
-    "Recomendation"
+    "Recomendation",
+    "Favorite"
   ];
 
   int _selectedIndex = 0;
   late List<dynamic> bodyList = [
     _home(),
     StopwatchScreen(),
-    Container(),
+    Information(),
   ];
 
   @override
@@ -169,7 +174,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               return Recomendation();
                             }));
                           }
-                        },
+                          else if(index == 4){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return Favorite();
+                          }));
+                          }
+                          },
                         child: Container(
                           margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                           decoration: BoxDecoration(
